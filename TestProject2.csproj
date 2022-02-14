@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+	  <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>	
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,8 +21,14 @@
     </PackageReference>
   </ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="allure-results\" />
+	</ItemGroup>
+
   <ItemGroup>
-    <Folder Include="allure-reports\" />
+    <None Update="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
