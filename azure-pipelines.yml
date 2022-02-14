@@ -1,23 +1,36 @@
-# Starter pipeline
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: '**/TestProject2.csproj'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
 pool:
-  vmImage: ubuntu-latest
+  name: Default
+#Your build pipeline references the ‘Browser’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references the ‘TestBedNumber’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet  6.0.0'
+  inputs:
+    versionSpec: ' 6.0.0'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore '
+  inputs:
+    command: restore
+    projects: '**/TestProject2.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test '
+  inputs:
+    command: test
+    projects: '**/TestProject2.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore_test'
+  inputs:
+    command: restore
+    projects: '**/TestProj.csproj'
+  enabled: false
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test_test'
+  inputs:
+    command: test
+    projects: '**/TestProj.csproj'
+  enabled: false
