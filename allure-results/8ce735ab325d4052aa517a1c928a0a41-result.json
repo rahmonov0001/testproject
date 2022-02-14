@@ -1,0 +1,67 @@
+{
+  "uuid": "af9b1577-a489-44f6-b00c-fa2145d8fb1a-tr-0-1001",
+  "historyId": "TestProject2.Tests.Test1",
+  "fullName": "TestProject2.Tests.Test1",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-KHIEM2O"
+    },
+    {
+      "name": "package",
+      "value": "TestProject2"
+    },
+    {
+      "name": "testMethod",
+      "value": "Test1"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    }
+  ],
+  "links": [],
+  "name": "Test1",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: 7\r\n  But was:  11\r\n",
+    "trace": "   at TestProject2.Tests.Test1() in C:\\Users\\ProBook\\source\\repos\\TestProject2\\TestProject2\\UnitTest1.cs:line 25\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Test1",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: 7\r\n  But was:  11\r\n",
+        "trace": "   at TestProject2.Tests.Test1() in C:\\Users\\ProBook\\source\\repos\\TestProject2\\TestProject2\\UnitTest1.cs:line 25\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "a8f0384638974820aae322f66fa78b64-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1644862903579,
+      "stop": 1644862903886
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1644862903578,
+  "stop": 1644862903891
+}
